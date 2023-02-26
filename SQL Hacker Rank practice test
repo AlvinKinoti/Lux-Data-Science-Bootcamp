@@ -1,0 +1,12 @@
+CREATE TABLE Hackers_Info AS
+SELECT *
+FROM Hacker_Table ht
+INNER JOIN Submissions_Table st
+        ON ht.hacker_id = st.hacker_id;
+
+SELECT MAX (submission_date), MIN (submission_date)
+        submission_date,
+        hacker_id,
+        hacker_name
+FROM Hackers_Info hi
+ORDER BY submission_date ASC
